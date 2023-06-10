@@ -1,4 +1,4 @@
-import { SetMetadata } from '@nestjs/common'
+import { SetMetadata } from '../../@nestjs/common'
 import { algorithmKey } from './common/constant'
 import { Algorithm } from './common/enum'
 

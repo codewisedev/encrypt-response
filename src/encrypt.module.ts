@@ -1,4 +1,5 @@
-import { DynamicModule, Module } from '@nestjs/common'
+import { EncryptService } from './encrypt.service'
+import { DynamicModule, Module } from '../../@nestjs/common'
 
 @Module({})
 export class EncryptModule {
@@ -9,9 +10,10 @@ export class EncryptModule {
         {
           provide: 'ENCRYPT_OPTIONS',
           useValue: private_key
-        }
+        },
+        EncryptService
       ],
-      exports: ['ENCRYPT_OPTIONS']
+      exports: ['ENCRYPT_OPTIONS', EncryptService]
     }
   }
 }
