@@ -50,35 +50,35 @@ exports.EncryptInterceptor = EncryptInterceptor;
 function encryptData(data, type, privateKey) {
     switch (type) {
         case enum_1.Algorithm.MD5:
-            return (0, crypto_js_1.MD5)(data).toString();
+            return (0, crypto_js_1.MD5)(JSON.stringify(data)).toString();
         case enum_1.Algorithm.SHA1:
-            return (0, crypto_js_1.SHA1)(data).toString();
+            return (0, crypto_js_1.SHA1)(JSON.stringify(data)).toString();
         case enum_1.Algorithm.SHA3:
-            return (0, crypto_js_1.SHA3)(data, { outputLength: 512 }).toString();
+            return (0, crypto_js_1.SHA3)(JSON.stringify(data), { outputLength: 512 }).toString();
         case enum_1.Algorithm.SHA256:
-            return (0, crypto_js_1.SHA256)(data).toString(Crypto.enc.Base64);
+            return (0, crypto_js_1.SHA256)(JSON.stringify(data)).toString(Crypto.enc.Base64);
         case enum_1.Algorithm.SHA512:
-            return (0, crypto_js_1.SHA512)(data).toString(Crypto.enc.Base64);
+            return (0, crypto_js_1.SHA512)(JSON.stringify(data)).toString(Crypto.enc.Base64);
         case enum_1.Algorithm.RIPEMD160:
-            return (0, crypto_js_1.RIPEMD160)(data).toString();
+            return (0, crypto_js_1.RIPEMD160)(JSON.stringify(data)).toString();
         case enum_1.Algorithm.HmacMD5:
-            return (0, crypto_js_1.HmacMD5)(data, privateKey).toString();
+            return (0, crypto_js_1.HmacMD5)(JSON.stringify(data), privateKey).toString();
         case enum_1.Algorithm.HmacSHA1:
-            return (0, crypto_js_1.HmacSHA1)(data, privateKey).toString();
+            return (0, crypto_js_1.HmacSHA1)(JSON.stringify(data), privateKey).toString();
         case enum_1.Algorithm.HmacSHA256:
-            return (0, crypto_js_1.HmacSHA256)(data, privateKey).toString();
+            return (0, crypto_js_1.HmacSHA256)(JSON.stringify(data), privateKey).toString();
         case enum_1.Algorithm.HmacSHA512:
-            return (0, crypto_js_1.HmacSHA512)(data, privateKey).toString();
+            return (0, crypto_js_1.HmacSHA512)(JSON.stringify(data), privateKey).toString();
         case enum_1.Algorithm.AES:
-            return crypto_js_1.AES.encrypt(data, privateKey).toString();
+            return crypto_js_1.AES.encrypt(JSON.stringify(data), privateKey).toString();
         case enum_1.Algorithm.DES:
-            return crypto_js_1.DES.encrypt(data, privateKey).toString();
+            return crypto_js_1.DES.encrypt(JSON.stringify(data), privateKey).toString();
         case enum_1.Algorithm.Rabbit:
-            return crypto_js_1.Rabbit.encrypt(data, privateKey).toString();
+            return crypto_js_1.Rabbit.encrypt(JSON.stringify(data), privateKey).toString();
         case enum_1.Algorithm.RC4:
-            return crypto_js_1.RC4.encrypt(data, privateKey).toString();
+            return crypto_js_1.RC4.encrypt(JSON.stringify(data), privateKey).toString();
         case enum_1.Algorithm.RC4Drop:
-            return crypto_js_1.RC4Drop.encrypt(data, privateKey).toString();
+            return crypto_js_1.RC4Drop.encrypt(JSON.stringify(data), privateKey).toString();
     }
 }
 //# sourceMappingURL=encrypt.interceptor.js.map

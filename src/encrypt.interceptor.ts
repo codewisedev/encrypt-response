@@ -20,9 +20,9 @@ import {
   SHA1,
   SHA256,
   SHA3,
-  SHA512,
+  SHA512
 } from 'crypto-js'
-import * as Crypto from 'crypto-js';
+import * as Crypto from 'crypto-js'
 import { Response } from '../../express'
 import { Observable, map } from '../../rxjs'
 import { Reflector } from '../../@nestjs/core'
@@ -82,34 +82,34 @@ export class EncryptInterceptor implements NestInterceptor {
 function encryptData(data: any, type: Algorithm, privateKey: string): any {
   switch (type) {
     case Algorithm.MD5:
-      return MD5(data).toString()
+      return MD5(JSON.stringify(data)).toString()
     case Algorithm.SHA1:
-      return SHA1(data).toString()
+      return SHA1(JSON.stringify(data)).toString()
     case Algorithm.SHA3:
-      return SHA3(data, { outputLength: 512 }).toString()
+      return SHA3(JSON.stringify(data), { outputLength: 512 }).toString()
     case Algorithm.SHA256:
-      return SHA256(data).toString(Crypto.enc.Base64)
+      return SHA256(JSON.stringify(data)).toString(Crypto.enc.Base64)
     case Algorithm.SHA512:
-      return SHA512(data).toString(Crypto.enc.Base64)
+      return SHA512(JSON.stringify(data)).toString(Crypto.enc.Base64)
     case Algorithm.RIPEMD160:
-      return RIPEMD160(data).toString()
+      return RIPEMD160(JSON.stringify(data)).toString()
     case Algorithm.HmacMD5:
-      return HmacMD5(data, privateKey).toString()
+      return HmacMD5(JSON.stringify(data), privateKey).toString()
     case Algorithm.HmacSHA1:
-      return HmacSHA1(data, privateKey).toString()
+      return HmacSHA1(JSON.stringify(data), privateKey).toString()
     case Algorithm.HmacSHA256:
-      return HmacSHA256(data, privateKey).toString()
+      return HmacSHA256(JSON.stringify(data), privateKey).toString()
     case Algorithm.HmacSHA512:
-      return HmacSHA512(data, privateKey).toString()
+      return HmacSHA512(JSON.stringify(data), privateKey).toString()
     case Algorithm.AES:
-      return AES.encrypt(data, privateKey).toString()
+      return AES.encrypt(JSON.stringify(data), privateKey).toString()
     case Algorithm.DES:
-      return DES.encrypt(data, privateKey).toString()
+      return DES.encrypt(JSON.stringify(data), privateKey).toString()
     case Algorithm.Rabbit:
-      return Rabbit.encrypt(data, privateKey).toString()
+      return Rabbit.encrypt(JSON.stringify(data), privateKey).toString()
     case Algorithm.RC4:
-      return RC4.encrypt(data, privateKey).toString()
+      return RC4.encrypt(JSON.stringify(data), privateKey).toString()
     case Algorithm.RC4Drop:
-      return RC4Drop.encrypt(data, privateKey).toString()
+      return RC4Drop.encrypt(JSON.stringify(data), privateKey).toString()
   }
 }

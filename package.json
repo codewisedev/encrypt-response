@@ -1,6 +1,6 @@
 {
   "name": "encrypt-response",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Encrypt controller response",
   "author": "SMR",
   "private": false,
