@@ -8,7 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var EncryptModule_1;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EncryptModule = void 0;
-const common_1 = require("@nestjs/common");
+const encrypt_service_1 = require("./encrypt.service");
+const common_1 = require("../../@nestjs/common");
 let EncryptModule = EncryptModule_1 = class EncryptModule {
     static register(private_key) {
         return {
@@ -17,9 +18,10 @@ let EncryptModule = EncryptModule_1 = class EncryptModule {
                 {
                     provide: 'ENCRYPT_OPTIONS',
                     useValue: private_key
-                }
+                },
+                encrypt_service_1.EncryptService
             ],
-            exports: ['ENCRYPT_OPTIONS']
+            exports: ['ENCRYPT_OPTIONS', encrypt_service_1.EncryptService]
         };
     }
 };

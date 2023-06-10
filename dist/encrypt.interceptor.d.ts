@@ -1,6 +1,6 @@
-import { CallHandler, ExecutionContext, NestInterceptor } from '@nestjs/common';
-import { Observable } from 'rxjs';
-import { Reflector } from '@nestjs/core';
+import { CallHandler, ExecutionContext, NestInterceptor } from '../../@nestjs/common';
+import { Observable } from '../../rxjs';
+import { Reflector } from '../../@nestjs/core';
 export declare class EncryptInterceptor implements NestInterceptor {
     private_key: string;
     private readonly reflector;
